@@ -1,0 +1,29 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+{% block content %}
+    <{% if query %}
+        <h4>{% trans "Results for" %} "{{ query }}"</h4>
+    {% endif %}
+
+    <div class="row mt-4">
+        {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+
+                    <img src="{{ product.photo.url }}"
+                         class="card-img-top w-50"
+                         alt="{{ product.name }}">
+
+                    <div class="card-body">
+                        <h5>{{ product.name }}</h5>
+                        <p>{{ product.description|truncatewords:10 }}</p>
+                        <p class="fw-bold">${{ product.price }}</p>
+                    </div>
+
+                </div>
+            </div>
+        {% empty %}
+            <p>{% trans "No products found 😢" %}</p>
+        {% endfor %}
+    
+{% endblock content %}

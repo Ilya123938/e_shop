@@ -1,0 +1,84 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<!-- ====== Hero Banner Horizontal ====== -->
+<div class="container my-5">
+    <div class="row align-items-center">
+        <!-- الصورة على اليسار (أو اليمين حسب التصميم) -->
+        <div class="col-12 col-md-6 mb-4 mb-md-0 text-center">
+            <img src="{% static 'image/product-14.png' %}" 
+                 class="img-fluid rounded" 
+                 alt="Hero Image"
+                 style="max-height: 300px; object-fit: cover;">
+        </div>
+
+        <!-- النصوص على الجانب الآخر -->
+        <div class="col-12 col-md-6 text-center text-md-start">
+            <h1 class="display-4 fw-bold">{% trans "Welcome to Our Shop" %}</h1>
+            <p class="lead mb-3">{% trans "Discover amazing products at the best prices!" %}</p>
+            <a href="#products" class="btn btn-warning btn-lg">{% trans "Shop Now" %}</a>
+        </div>
+    </div>
+</div>
+
+<!-- ====== Product List ====== -->
+<div class="container" id="products">
+    <h2 class="text-center mb-4">{% trans "Our Products" %}</h2>
+
+    <div class="row g-3">
+        {% for product in products %}
+        
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img  src="{{ product.photo.url }} "
+                     class="card-img-top" 
+                     alt="{{ product.name }}" 
+                     style="height: 250px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text text-truncate" style="max-height: 3em; overflow: hidden;">{{ product.description }}</p>
+                    <p class="card-text fw-bold">${{ product.price }}</p>
+                    <a href="{% url 'store:product_details' product.id %}" class="btn btn-primary mb-2">
+                        {% trans "View Details" %}
+                    </a>
+
+                    <!-- Add To Cart Form -->
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post" class="mt-auto">
+                        {% csrf_token %}
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="overwrite" value="False">
+                        <button type="submit" class="btn btn-success w-100">
+                            {% trans "Add To Cart" %}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+        {% endfor %}
+    </div>
+</div>
+
+    
+<div class="pagination d-flex justify-content-center my-4">
+    {% if page_obj.has_previous %}
+        <a href="?page=1{% if selected_category %}&category={{ selected_category }}{% endif %}" class="btn btn-outline-primary btn-sm">{% trans "First" %}</a>
+        <a href="?page={{ page_obj.previous_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}" class="btn btn-outline-primary btn-sm">{% trans "Previous" %}</a>
+    {% endif %}
+
+    <span class="mx-2">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}" class="btn btn-outline-warning btn-sm">{% trans "Next" %}</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}{% if selected_category %}&category={{ selected_category }}{% endif %}" class="btn btn-outline-primary btn-sm">{% trans "Last" %}</a>
+    {% endif %}
+</div>
+     
+
+   
+
+{% endblock content %}
