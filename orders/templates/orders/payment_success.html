@@ -2,12 +2,12 @@
 {% load i18n %}
 
 {% block content %}
-<div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">{% trans "Payment Successful!" %}</h4>
-  <p>{% trans "Thank you for your payment. Your order #{{ order.id }} has been successfully processed." %}</p>
-  <hr>
-  <p class="mb-0">{% trans "You will receive a confirmation email shortly with the details of your order." %}</p>
-<a href="#" class="alert-link"></a>
+<div class="container mx-auto mt-10 px-4 text-center">
+    <div class="bg-green-100 border border-green-300 text-green-700 px-6 py-5 rounded-lg">
+        <h4 class="text-2xl font-semibold mb-3">{% trans "Payment Successful!" %}</h4>
+        <p class="mb-2">{% trans "Thank you for your payment. Your order #{{ order.id }} has been successfully processed." %}</p>
+        <p class="text-sm">{% trans "You will receive a confirmation email shortly with the details of your order." %}</p>
+    </div>
+    <button type="button" class="btn-primary-custom mt-6" onclick="window.location.href='{% url 'store:product_list' %}'">{% trans "Continue Shopping" %}</button>
 </div>
-<button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'store:product_list' %}'">{% trans "Continue Shopping" %}</button>
 {% endblock content %}

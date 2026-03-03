@@ -3,149 +3,108 @@
 {% load i18n %}
 {% block content %}
 
-<!-- ===== HERO SECTION ===== -->
-<section class="text-light text-center py-5" style="background: linear-gradient(135deg,#2d2b65,#383763);">
-  <div class="container">
-    <h1 class="fw-bold text-warning">{% trans "About E-shop" %}</h1>
-    <p class="lead">{% trans "Your Trusted Online Shopping Partner" %}</p>
-  </div>
+<!-- Hero -->
+<section class="bg-gradient-to-r from-primary to-secondary text-white text-center py-20">
+    <h1 class="text-4xl font-bold mb-2">{% trans "About E-Shop" %}</h1>
+    <p class="text-lg">{% trans "Your Trusted Online Shopping Partner" %}</p>
 </section>
 
-<!-- ===== ABOUT SECTION ===== -->
-<section class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-lg-6 mb-4">
-        <h2 class="fw-bold mb-3">{% trans "Who We Are" %}</h2>
-        <p>
-          {% trans "E-shop is a modern online store providing high quality products with secure payment and fast delivery across Morocco." %}
-        </p>
-        <p>
-          {% trans "Our mission is to make online shopping simple, safe, and affordable." %}
-        </p>
-      </div>
-
-      <div class="col-lg-6 text-center">
-        <img src="{% static 'image/about.avif' %}"
-             class="img-fluid rounded shadow"
-             style="max-height:400px; object-fit:cover;">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHY CHOOSE US ===== -->
-<section class="py-5 bg-light">
-  <div class="container text-center">
-
-    <h2 class="fw-bold mb-5">{% trans "Why Choose Us?" %}</h2>
-
-    <div class="row">
-
-      <div class="col-lg-4 mb-4">
-        <i class="fas fa-truck fa-3x text-warning mb-3"></i>
-        <h5>{% trans "Fast Delivery" %}</h5>
-        <p>{% trans "We deliver your products quickly and safely." %}</p>
-      </div>
-
-      <div class="col-lg-4 mb-4">
-        <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
-        <h5>{% trans "Secure Payment" %}</h5>
-        <p>{% trans "All payments are protected and encrypted." %}</p>
-      </div>
-
-      <div class="col-lg-4 mb-4">
-        <i class="fas fa-headset fa-3x text-warning mb-3"></i>
-        <h5>{% trans "24/7 Support" %}</h5>
-        <p>{% trans "Our support team is always ready to help you." %}</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS SECTION ===== -->
-<section class="py-5 text-light text-center" style="background:#2d2b65;">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-3 mb-3">
-        <h2 class="fw-bold text-warning">10K+</h2>
-        <p>{% trans "Happy Customers" %}</p>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <h2 class="fw-bold text-warning">500+</h2>
-        <p>{% trans "Products" %}</p>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <h2 class="fw-bold text-warning">100%</h2>
-        <p>{% trans "Secure Payments" %}</p>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <h2 class="fw-bold text-warning">24/7</h2>
-        <p>{% trans "Support" %}</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== TEAM SECTION ===== -->
-<section class="py-5">
-  <div class="container text-center">
-
-    <h2 class="fw-bold mb-5">{% trans "Our Team" %}</h2>
-
-    <div class="row">
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{% trans "Founder" %}</h5>
-            <p class="card-text text-muted">{% trans "CEO & Developer" %}</p>
-          </div>
+<!-- Who We Are -->
+<section class="py-16">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-3xl font-semibold mb-4">{% trans "Who We Are" %}</h2>
+            <p class="mb-4">{% trans "E-shop is a modern online store providing high quality products with secure payment and fast delivery across Morocco." %}</p>
+            <p>{% trans "Our mission is to make online shopping simple, safe, and affordable." %}</p>
         </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/men/31.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{% trans "Marketing Head" %}</h5>
-            <p class="card-text text-muted">{% trans "Digital Marketing" %}</p>
-          </div>
+        <div class="">
+            <img src="{% static 'image/about.avif' %}" alt="About" class="w-full h-80 object-cover rounded-lg shadow-lg" />
         </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="https://randomuser.me/api/portraits/men/12.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{% trans "Support Manager" %}</h5>
-            <p class="card-text text-muted">{% trans "Customer Support" %}</p>
-          </div>
-        </div>
-      </div>
-
     </div>
-
-  </div>
 </section>
 
-<!-- ===== CALL TO ACTION ===== -->
-<section class="py-5 text-center text-light" style="background:#383763;">
-  <div class="container">
-    <h3 class="fw-bold text-warning mb-3">{% trans "Start Shopping Now!" %}</h3>
-    <a href="{% url 'store:product_list' %}" class="btn btn-warning btn-lg rounded-pill px-5">
-      {% trans "Browse Products" %}
+<!-- Why Choose Us -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-12">{% trans "Why Choose Us?" %}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-lg shadow-lg">
+                <i class="fas fa-truck fa-3x text-accent mb-4"></i>
+                <h5 class="font-semibold mb-2">{% trans "Fast Delivery" %}</h5>
+                <p class="text-gray-600">{% trans "We deliver your products quickly and safely." %}</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg">
+                <i class="fas fa-shield-alt fa-3x text-accent mb-4"></i>
+                <h5 class="font-semibold mb-2">{% trans "Secure Payment" %}</h5>
+                <p class="text-gray-600">{% trans "All payments are protected and encrypted." %}</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg">
+                <i class="fas fa-headset fa-3x text-accent mb-4"></i>
+                <h5 class="font-semibold mb-2">{% trans "24/7 Support" %}</h5>
+                <p class="text-gray-600">{% trans "Our support team is always ready to help you." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="py-16 bg-primary text-white text-center">
+    <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+            <h2 class="text-4xl font-bold text-accent">10K+</h2>
+            <p>{% trans "Happy Customers" %}</p>
+        </div>
+        <div>
+            <h2 class="text-4xl font-bold text-accent">500+</h2>
+            <p>{% trans "Products" %}</p>
+        </div>
+        <div>
+            <h2 class="text-4xl font-bold text-accent">100%</h2>
+            <p>{% trans "Secure Payments" %}</p>
+        </div>
+        <div>
+            <h2 class="text-4xl font-bold text-accent">24/7</h2>
+            <p>{% trans "Support" %}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section class="py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-12">{% trans "Our Team" %}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Founder" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h5 class="font-semibold">{% trans "Founder" %}</h5>
+                    <p class="text-gray-500">{% trans "CEO & Developer" %}</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Marketing Head" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h5 class="font-semibold">{% trans "Marketing Head" %}</h5>
+                    <p class="text-gray-500">{% trans "Digital Marketing" %}</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Support Manager" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h5 class="font-semibold">{% trans "Support Manager" %}</h5>
+                    <p class="text-gray-500">{% trans "Customer Support" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-secondary text-center">
+    <h3 class="text-2xl font-bold text-white mb-4">{% trans "Start Shopping Now!" %}</h3>
+    <a href="{% url 'store:product_list' %}" class="btn-primary-custom px-8 py-3 text-lg inline-block">
+        {% trans "Browse Products" %}
     </a>
-  </div>
 </section>
 
 {% endblock %}

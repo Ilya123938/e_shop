@@ -22,7 +22,7 @@
 </div>
 
 <!-- Main Navbar -->
-<nav class="bg-gradient-to-r from-blue-900 to-purple-900 shadow-lg sticky top-0 z-50" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<nav class="bg-gradient-to-r from-purple-900 to-purple-800 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-20">
             
@@ -33,15 +33,15 @@
             </a>
 
             <!-- Search Bar - Desktop -->
-            <div class="hidden md:flex flex-1 {% if LANGUAGE_BIDI %}me-8{% else %}mx-8{% endif %}">
+            <div class="hidden md:flex flex-1 mx-8">
                 <form method="GET" action="{% url 'store:product_search' %}" class="w-full flex">
                     <input 
                         type="text" 
                         name="query" 
                         placeholder="{% trans 'Search products...' %}" 
-                        class="flex-1 px-4 py-2 {% if LANGUAGE_BIDI %}rounded-r-lg{% else %}rounded-l-lg{% endif %} focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     >
-                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2 {% if LANGUAGE_BIDI %}rounded-l-lg{% else %}rounded-r-lg{% endif %} font-semibold transition">
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2 rounded-r-lg font-semibold transition">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
@@ -51,10 +51,10 @@
             <div class="flex items-center gap-4">
                 <!-- Language Toggle -->
                 <div class="dropdown">
-                    <button class="text-white hover:text-yellow-400 transition text-lg" data-bs-toggle="dropdown">
+                    <button class="text-white hover:text-yellow-400 transition" data-bs-toggle="dropdown">
                         <i class="fas fa-globe"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="?lang=en">🇬🇧 English</a></li>
                         <li><a class="dropdown-item" href="?lang=ar">🇸🇦 العربية</a></li>
                     </ul>
@@ -63,8 +63,8 @@
                 <!-- User Account -->
                 <div class="dropdown">
                     {% if user.is_authenticated %}
-                        <button class="text-white hover:text-yellow-400 transition text-lg" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-circle"></i>
+                        <button class="text-white hover:text-yellow-400 transition" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle text-xl"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><h6 class="dropdown-header">{{ user.first_name }} {{ user.last_name }}</h6></li>
@@ -75,15 +75,15 @@
                             <li><a class="dropdown-item text-danger" href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt me-2"></i>{% trans "Logout" %}</a></li>
                         </ul>
                     {% else %}
-                        <a href="{% url 'accounts:login' %}" class="text-white hover:text-yellow-400 transition text-lg">
+                        <a href="{% url 'accounts:login' %}" class="text-white hover:text-yellow-400 transition">
                             <i class="fas fa-sign-in-alt"></i>
                         </a>
                     {% endif %}
                 </div>
 
                 <!-- Cart -->
-                <a href="{% url 'cart:cart_detail' %}" class="relative text-white hover:text-yellow-400 transition text-lg">
-                    <i class="fas fa-shopping-cart"></i>
+                <a href="{% url 'cart:cart_detail' %}" class="relative text-white hover:text-yellow-400 transition">
+                    <i class="fas fa-shopping-cart text-xl"></i>
                     {% if cart|length > 0 %}
                         <span id="cart-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                             {{ cart|length }}
@@ -92,22 +92,22 @@
                 </a>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="md:hidden text-white text-lg" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-                    <i class="fas fa-bars"></i>
+                <button class="md:hidden text-white" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Search & Categories -->
         <div id="mobileMenu" class="collapse md:hidden pb-4">
-            <form method="GET" action="{% url 'store:product_search' %}" class="flex mb-4 gap-2">
+            <form method="GET" action="{% url 'store:product_search' %}" class="flex mb-4">
                 <input 
                     type="text" 
                     name="query" 
                     placeholder="{% trans 'Search...' %}" 
-                    class="flex-1 px-3 py-2 rounded text-sm focus:outline-none"
+                    class="flex-1 px-3 py-2 rounded-l text-sm focus:outline-none"
                 >
-                <button type="submit" class="bg-yellow-400 px-4 rounded">
+                <button type="submit" class="bg-yellow-400 px-4 rounded-r">
                     <i class="fas fa-search text-gray-900"></i>
                 </button>
             </form>
