@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^820p#g$1k&iin__iwc+hai^%o+%xzd50d^=xey$e)@n3qj2vv'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-^820p#g$1k&iin__iwc+hai^%o+%xzd50d^=xey$e)@n3qj2vv')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
 
 
 # Application definition
@@ -100,11 +100,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'e_shop',
-        'USER': 'ilyass',
-        'PASSWORD': 'jintoki',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('DB_NAME', default='e_shop'),
+        'USER': config('DB_USER', default='ilyass'),
+        'PASSWORD': config('DB_PASSWORD', default='jintoki'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
@@ -160,10 +160,10 @@ CART_SESSION_ID = 'cart'
 # EMAIL SETTINGS
 # --------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'alyaslhyt@gmail.com'
+EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='alyaslhyt@gmail.com')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
@@ -184,15 +184,15 @@ MESSAGE_TAGS = {
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',  # الخادم + رقم DB
+        'LOCATION': config('REDIS_LOCATION', default='redis://127.0.0.1:6379/1'),
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
     }
 }
 
-CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
-CELERY_RESULT_BACKEND = 'rpc://'# في settings.py مؤقتًا
+CELERY_BROKER_URL = config('CELERY_BROKER_URL', default='amqp://guest:guest@localhost:5672//')
+CELERY_RESULT_BACKEND = config('CELERY_RESULT_BACKEND', default='rpc://')
 
 from django.utils.translation import gettext_lazy as _
 import os
