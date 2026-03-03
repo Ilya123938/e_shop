@@ -1,0 +1,13 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">{% trans "Payment Successful!" %}</h4>
+  <p>{% trans "Thank you for your payment. Your order #{{ order.id }} has been successfully processed." %}</p>
+  <hr>
+  <p class="mb-0">{% trans "You will receive a confirmation email shortly with the details of your order." %}</p>
+<a href="#" class="alert-link"></a>
+</div>
+<button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'store:product_list' %}'">{% trans "Continue Shopping" %}</button>
+{% endblock content %}

@@ -1,0 +1,592 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-28 12:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\account\forms.py:7 .\account\templates\accounts\login.html:56
+msgid "Password"
+msgstr ""
+
+#: .\account\forms.py:9 .\account\templates\accounts\login.html:60
+msgid "Enter your password"
+msgstr ""
+
+#: .\account\forms.py:14
+msgid "Confirm Password"
+msgstr ""
+
+#: .\account\forms.py:16
+msgid "Confirm your password"
+msgstr ""
+
+#: .\account\forms.py:26
+msgid "Username"
+msgstr ""
+
+#: .\account\forms.py:27
+msgid "First Name"
+msgstr ""
+
+#: .\account\forms.py:28
+msgid "Last Name"
+msgstr ""
+
+#: .\account\forms.py:29 .\account\templates\accounts\login.html:47
+#: .\store\models.py:89
+msgid "Email"
+msgstr ""
+
+#: .\account\forms.py:30
+msgid "Phone Number"
+msgstr ""
+
+#: .\account\forms.py:31
+msgid "Country"
+msgstr ""
+
+#: .\account\forms.py:36 .\account\forms.py:76
+msgid "Enter your username"
+msgstr ""
+
+#: .\account\forms.py:40 .\account\forms.py:77
+msgid "Enter your first name"
+msgstr ""
+
+#: .\account\forms.py:44 .\account\forms.py:78
+msgid "Enter your last name"
+msgstr ""
+
+#: .\account\forms.py:48 .\account\forms.py:79
+#: .\account\templates\accounts\login.html:51
+msgid "Enter your email"
+msgstr ""
+
+#: .\account\forms.py:52
+msgid "Enter your phone number"
+msgstr ""
+
+#: .\account\forms.py:66
+msgid "Your confirm password does not match"
+msgstr ""
+
+#: .\account\models.py:85 .\store\models.py:85
+msgid "Name"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:12
+msgid "Well Done"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:16
+msgid "Thank you for your registration. We sent you a verification email."
+msgstr ""
+
+#: .\account\templates\accounts\login.html:22
+msgid "Already verified?"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:24
+msgid "Login Here"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:40
+#: .\account\templates\accounts\login.html:66
+#: .\account\templates\parts\navbar.html:127
+msgid "Login"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:71
+msgid "Don't have an account?"
+msgstr ""
+
+#: .\account\templates\accounts\login.html:73
+msgid "Create Account"
+msgstr ""
+
+#: .\account\templates\accounts\register.html:11
+msgid "Create Your Account"
+msgstr ""
+
+#: .\account\templates\accounts\register.html:12
+msgid "Welcome to our store 👋"
+msgstr ""
+
+#: .\account\templates\accounts\register.html:31
+#: .\account\templates\parts\navbar.html:132
+msgid "Register"
+msgstr ""
+
+#: .\account\templates\accounts\register.html:40
+msgid "Already have an account?"
+msgstr ""
+
+#: .\account\templates\accounts\register.html:42
+msgid "Login here"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:13
+#: .\account\templates\parts\navbar.html:8
+#: .\account\templates\parts\navbar.html:61
+msgid "E-shop"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:16
+msgid ""
+"Your trusted online store for the best products. We provide fast delivery "
+"and secure payment."
+msgstr ""
+
+#: .\account\templates\parts\footer.html:30
+msgid "Quick Links"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:32
+#: .\account\templates\parts\navbar.html:75
+msgid "Home"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:33
+msgid "About Us"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:34 .\store\models.py:107
+msgid "Contact"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:35
+#: .\account\templates\parts\navbar.html:41
+#: .\store\templates\pages\about.html:91
+msgid "Support"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:41 .\store\models.py:14
+msgid "Categories"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:50
+#: .\account\templates\parts\navbar.html:89
+msgid "No categories"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:57
+#: .\store\templates\pages\contact.html:10
+msgid "Contact Us"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:60
+msgid "support@eshop.com"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:64
+msgid "+212 600000000"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:68
+#: .\store\templates\pages\contact.html:60
+msgid "Morocco"
+msgstr ""
+
+#: .\account\templates\parts\footer.html:78
+msgid "E-shop. All Rights Reserved."
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:36
+msgid "Delivery"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:46
+msgid "About"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:82 .\store\models.py:40
+#: .\store\templates\pages\product_details.html:28
+msgid "Category"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:85
+msgid "All Products"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:97
+msgid "Search products..."
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:114
+msgid "Profile"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:119
+msgid "Logout"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:155 .\config\settings.py:205
+msgid "Arabic"
+msgstr ""
+
+#: .\account\templates\parts\navbar.html:161 .\config\settings.py:204
+msgid "English"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:8
+msgid "Shopping Cart"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:15 .\store\models.py:67
+msgid "Product"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:16 .\store\models.py:52
+#: .\store\templates\pages\product_details.html:31
+msgid "Price"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:17
+#: .\store\templates\pages\product_details.html:43
+msgid "Quantity"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:18 .\cart\templates\cart_detail.html:86
+msgid "Total"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:19 .\cart\templates\cart_detail.html:44
+msgid "Update"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:20
+msgid "Decrease"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:21 .\cart\templates\cart_detail.html:60
+msgid "Remove"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:72
+msgid "Subtotal"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:76
+msgid "Discount"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:81
+msgid "Total After Discount"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:93
+msgid "Tax"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:99
+msgid "Final Total"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:103
+msgid "Apply Coupon"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:108
+msgid "Apply"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:116
+#: .\orders\templates\orders\create_order.html:23
+#: .\orders\templates\orders\payment_success.html:12
+msgid "Continue Shopping"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:119
+msgid "Checkout"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:126
+msgid "Your cart is empty"
+msgstr ""
+
+#: .\cart\templates\cart_detail.html:130
+msgid "Go Shopping"
+msgstr ""
+
+#: .\orders\templates\orders\create_order.html:13
+msgid "Order Created Successfully!"
+msgstr ""
+
+#: .\orders\templates\orders\create_order.html:17
+msgid "Your Order ID:"
+msgstr ""
+
+#: .\orders\templates\orders\create_order.html:39
+msgid "Billing Details"
+msgstr ""
+
+#: .\orders\templates\orders\create_order.html:49
+msgid "Confirm Order"
+msgstr ""
+
+#: .\orders\templates\orders\create_order.html:66
+msgid "Your Order"
+msgstr ""
+
+#: .\orders\templates\orders\payment_order.html:6
+msgid "Payment for Order"
+msgstr ""
+
+#: .\orders\templates\orders\payment_order.html:7
+msgid "Total Amount"
+msgstr ""
+
+#: .\orders\templates\orders\payment_order.html:12
+msgid "Pay Now"
+msgstr ""
+
+#: .\orders\templates\orders\payment_order.html:16
+msgid "Errors:"
+msgstr ""
+
+#: .\orders\templates\orders\payment_success.html:6
+msgid "Payment Successful!"
+msgstr ""
+
+#: .\orders\templates\orders\payment_success.html:7
+msgid ""
+"Thank you for your payment. Your order #{{ order.id }} has been successfully "
+"processed."
+msgstr ""
+
+#: .\orders\templates\orders\payment_success.html:9
+msgid ""
+"You will receive a confirmation email shortly with the details of your order."
+msgstr ""
+
+#: .\store\models.py:9
+msgid "Category Name"
+msgstr ""
+
+#: .\store\models.py:31 .\store\templates\pages\product_details.html:26
+msgid "Product Name"
+msgstr ""
+
+#: .\store\models.py:46
+msgid "Product Description"
+msgstr ""
+
+#: .\store\models.py:57
+msgid "Available"
+msgstr ""
+
+#: .\store\models.py:62 .\store\models.py:103
+msgid "Created At"
+msgstr ""
+
+#: .\store\models.py:68 .\store\templates\pages\about.html:81
+msgid "Products"
+msgstr ""
+
+#: .\store\models.py:94
+msgid "Subject"
+msgstr ""
+
+#: .\store\models.py:98
+msgid "Message"
+msgstr ""
+
+#: .\store\models.py:108
+msgid "Contacts"
+msgstr ""
+
+#: .\store\templates\pages\about.html:9
+msgid "About E-shop"
+msgstr ""
+
+#: .\store\templates\pages\about.html:10
+msgid "Your Trusted Online Shopping Partner"
+msgstr ""
+
+#: .\store\templates\pages\about.html:20
+msgid "Who We Are"
+msgstr ""
+
+#: .\store\templates\pages\about.html:22
+msgid ""
+"E-shop is a modern online store providing high quality products with secure "
+"payment and fast delivery across Morocco."
+msgstr ""
+
+#: .\store\templates\pages\about.html:25
+msgid "Our mission is to make online shopping simple, safe, and affordable."
+msgstr ""
+
+#: .\store\templates\pages\about.html:43
+msgid "Why Choose Us?"
+msgstr ""
+
+#: .\store\templates\pages\about.html:49
+msgid "Fast Delivery"
+msgstr ""
+
+#: .\store\templates\pages\about.html:50
+msgid "We deliver your products quickly and safely."
+msgstr ""
+
+#: .\store\templates\pages\about.html:55
+msgid "Secure Payment"
+msgstr ""
+
+#: .\store\templates\pages\about.html:56
+msgid "All payments are protected and encrypted."
+msgstr ""
+
+#: .\store\templates\pages\about.html:61
+msgid "24/7 Support"
+msgstr ""
+
+#: .\store\templates\pages\about.html:62
+msgid "Our support team is always ready to help you."
+msgstr ""
+
+#: .\store\templates\pages\about.html:76
+msgid "Happy Customers"
+msgstr ""
+
+#: .\store\templates\pages\about.html:86
+msgid "Secure Payments"
+msgstr ""
+
+#: .\store\templates\pages\about.html:102
+msgid "Our Team"
+msgstr ""
+
+#: .\store\templates\pages\about.html:110
+msgid "Founder"
+msgstr ""
+
+#: .\store\templates\pages\about.html:111
+msgid "CEO & Developer"
+msgstr ""
+
+#: .\store\templates\pages\about.html:120
+msgid "Marketing Head"
+msgstr ""
+
+#: .\store\templates\pages\about.html:121
+msgid "Digital Marketing"
+msgstr ""
+
+#: .\store\templates\pages\about.html:130
+msgid "Support Manager"
+msgstr ""
+
+#: .\store\templates\pages\about.html:131
+msgid "Customer Support"
+msgstr ""
+
+#: .\store\templates\pages\about.html:144
+msgid "Start Shopping Now!"
+msgstr ""
+
+#: .\store\templates\pages\about.html:146
+msgid "Browse Products"
+msgstr ""
+
+#: .\store\templates\pages\contact.html:11
+msgid "We would love to hear from you"
+msgstr ""
+
+#: .\store\templates\pages\contact.html:25
+msgid "Send us a message"
+msgstr ""
+
+#: .\store\templates\pages\contact.html:33
+msgid "Submit"
+msgstr ""
+
+#: .\store\templates\pages\contact.html:46
+msgid "Contact Information"
+msgstr ""
+
+#: .\store\templates\pages\contact.html:66
+msgid "Follow Us"
+msgstr ""
+
+#: .\store\templates\pages\product_details.html:14
+msgid "Product Image"
+msgstr ""
+
+#: .\store\templates\pages\product_details.html:19
+msgid "No Image"
+msgstr ""
+
+#: .\store\templates\pages\product_details.html:34
+msgid "Description"
+msgstr ""
+
+#: .\store\templates\pages\product_details.html:57
+msgid "Add to Cart"
+msgstr ""
+
+#: .\store\templates\pages\product_details.html:64
+msgid "Back to Products"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:19
+msgid "Welcome to Our Shop"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:20
+msgid "Discover amazing products at the best prices!"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:21
+msgid "Shop Now"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:28
+msgid "Our Products"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:44
+msgid "View Details"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:53
+msgid "Add To Cart"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:67
+msgid "First"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:68
+msgid "Previous"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:76
+msgid "Next"
+msgstr ""
+
+#: .\store\templates\pages\product_list.html:77
+msgid "Last"
+msgstr ""
+
+#: .\store\templates\pages\product_search.html:5
+msgid "Results for"
+msgstr ""
+
+#: .\store\templates\pages\product_search.html:26
+msgid "No products found 😢"
+msgstr ""

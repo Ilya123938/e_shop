@@ -1,0 +1,26 @@
+{% extends "accounts/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block content %}
+<div class="container mt-5">
+    <h2>{% trans "Payment for Order" %} #{{ order.id }}</h2>
+    <p>{% trans "Total Amount" %}: ${{ order.get_total_cost }}</p>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">{% trans "Pay Now" %}</button>
+    </form>
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>{% trans "Errors:" %}</strong>
+            <ul>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li>{{ field.label }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock content %}

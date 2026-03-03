@@ -1,0 +1,171 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "E-shop" %}</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ===== TOP TOOLBAR START ===== -->
+<div class="container-fluid border-bottom d d-lg-block" style="background:#383763;">
+  <div class="container">
+    <div class="row align-items-center py-2 text-light">
+
+      <!-- Left Info -->
+      <div class="col-lg-6">
+        <small class="me-3">
+          <i class="fas fa-envelope me-1 text-warning"></i>
+          support@eshop.com
+        </small>
+
+        <small>
+          <i class="fas fa-phone me-1 text-warning"></i>
+          +212 600000000
+        </small>
+      </div>
+
+      <!-- Right Links -->
+      <div class="col-lg-6 text-end">
+
+        <a href="#" class="text-light me-3 text-decoration-none">
+          <i class="fas fa-truck me-1 text-warning"></i>
+          {% trans "Delivery" %}
+        </a>
+
+        <a href="#" class="text-light me-3 text-decoration-none">
+          <i class="fas fa-headset me-1 text-warning"></i>
+          {% trans "Support" %}
+        </a>
+
+        <a href="{% url 'store:about' %}" class="text-light text-decoration-none">
+          <i class="fas fa-circle-info me-1 text-warning"></i>
+          {% trans "About" %}
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ===== TOP TOOLBAR END ===== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top" style="background: rgb(45,43,101);">
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="{% url 'store:product_list' %}" class="navbar-brand fw-bold text-warning">
+      <i class="fas fa-shopping-bag me-2"></i>{% trans "E-shop" %}
+    </a>
+
+    <!-- Toggle Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <!-- Left Menu -->
+      <ul class="navbar-nav me-3">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'store:product_list' %}">
+            <i class="fas fa-home me-1"></i> {% trans "Home" %}
+          </a>
+        </li>
+
+        <!-- Category Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown">
+            <i class="fas fa-list me-1"></i> {% trans "Category" %}
+          </a>
+          <ul class="dropdown-menu shadow">
+            <li><a href="{% url 'store:product_list' %}" class="dropdown-item">{% trans "All Products" %}</a></li>
+            {% for x in categories %}
+            <li><a class="dropdown-item" href="{% url 'store:products_by_category' x.slug %}">{{ x.name }}</a></li>
+            {% empty %}
+            <li><span class="dropdown-item text-muted">{% trans "No categories" %}</span></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex flex-grow-1 mx-lg-3 my-3 my-lg-0" method="GET" action="{% url 'store:product_search' %}">
+        <input class="form-control rounded-pill me-2" type="search" name="query" placeholder="{% trans 'Search products...' %}">
+        <button class="btn btn-warning rounded-pill px-4">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <!-- Right Menu -->
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown">
+            <i class="fas fa-user me-1"></i>{{ user.username }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li>
+              <a class="dropdown-item" href="{% url 'accounts:profile' %}">
+                <i class="fas fa-user-cog me-2"></i> {% trans "Profile" %}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item text-danger" href="{% url 'accounts:logout' %}">
+                <i class="fas fa-sign-out-alt me-2"></i> {% trans "Logout" %}
+              </a>
+            </li>
+          </ul>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'accounts:login' %}">
+            <i class="fas fa-sign-in-alt me-1"></i> {% trans "Login" %}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'accounts:register' %}">
+            <i class="fas fa-user-plus me-1"></i> {% trans "Register" %}
+          </a>
+        </li>
+        {% endif %}
+
+        <!-- Cart -->
+        <li class="nav-item ms-lg-3">
+          <a class="nav-link text-light position-relative" href="{% url 'cart:cart_detail' %}">
+            <i class="fas fa-shopping-cart fs-5"></i>
+            {% if cart %}
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{ cart|length }}
+            </span>
+            {% endif %}
+          </a>
+        </li>
+
+        <!-- Language Switcher -->
+        <li class="nav-item ms-lg-3">
+          <form action="{% url 'set_language' %}" method="post" class="d-inline">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            <input type="hidden" name="language" value="ar">
+            <button type="submit" class="btn btn-sm btn-warning">{% trans "Arabic" %}</button>
+          </form>
+          <form action="{% url 'set_language' %}" method="post" class="d-inline">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            <input type="hidden" name="language" value="en">
+            <button type="submit" class="btn btn-sm btn-secondary">{% trans "English" %}</button>
+          </form>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+</head>
+<body>
+    <h1 style="color: teal;">E_Shop</h1>
+    <hr>
+    {% if order.paid == True %}
+    <h3>Order Details</h3>
+    <p><strong>Name:</strong> {{ order.first_name }} {{ order.last_name }}</p>
+    <p><strong>Email:</strong> {{ order.email }}</p>
+    
+    <p><strong>Address:</strong> {{ order.address }}, {{ order.postal_code }}, {{ order.city }}</p>
+    <p><strong>Paid:</strong> {{ order.paid }}</p>
+    <P><strong>Order ID:</strong> {{ order.order_id }}</P>
+    <p><strong>created:</strong> {{ order.created }}</p>
+
+    <h2>Items</h2>
+    <table border="1" cellspacing="0" cellpadding="5" style="width: 100%;">
+        <thead>
+            <tr >
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order.items.all %}
+            <tr style="background: lightgray;">
+                <td>{{ item.product.name }}</td>
+                <td>${{ item.price }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.get_cost }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr style="background: goldenrod; color: green;">
+                <td colspan="3"><strong>Total Cost:</strong></td>
+                <td><strong>${{ order.get_total_cost }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+    <h1 style="color: green;">Paid//</h1>
+    {% else %}
+    <p>Order not paid yet.</p>
+    {% endif %}
+
+    
+</body>
+</html>
